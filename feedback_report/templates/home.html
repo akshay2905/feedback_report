@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load nvd3_tags %}
+{% load staticfiles %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Feedback Analysis And Report System</title>
+
+<link rel="icon" href="{% static 'img/pie-chart.png' %}" type="image/x-icon" />
+    <!-- Bootstrap Core CSS -->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../static/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{# Jquery CDN : Needed when using jquery_on_ready=True #}
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    {% include_chart_jscss %}
+    {% load_chart charttype chartdata chartcontainer extra %}
+    {% load_chart charttype chartdata_with_date chartcontainer_with_date extra_with_date %}
+<style>
+.cont{
+    background-image: url("{% static 'img/noise.png' %}");
+   
+
+}</style>
+</head>
+
+<body >
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Feedback Analysis and Report System</a>
+            </div>
+            <!-- Top Menu Items -->
+           
+                
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="/" ><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/discretebarchart_with_date/"><i class="fa fa-fw fa-bar-chart-o"></i> Discrete Bar Chart with Date</a>
+                    </li>
+                    <li>
+                       <a href="/linewithfocuschart/"> <i class="fa fa-fw fa-bar-chart-o"></i>Line With FocusChart</a> 
+                    </li>
+                    <li>
+               <a href="/multibarchart/"><i class="fa fa-fw fa-bar-chart-o"></i>Multi Bar Chart</a>
+                    </li>
+                    <li>
+                        <a href="/multibarhorizontalchart/"><i class="fa fa-fw fa-bar-chart-o"></i>Multi Bar Horizontal Chart</a>
+                    </li>
+                    <li>
+                         <a href="/piechart/"><i class="fa fa-fw fa-bar-chart-o"></i>Pie Chart</a> 
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/infra/"><i class="fa fa-fw fa-dashboard"></i> Infrastructure</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper" class="cont">
+          
+ 
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                             
+                            <small>Welcome to Feedback Analysis and Report System. <p>Find all the visualisations at single place. </small>
+                        </h1><div>
+              
+
+                    </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+
+        <!-- Page Heading -->
+        
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'img/discretebar.png'%}" img alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Discrete Bar Chart with Date</h3>
+                <h4></h4>
+                <p>Visualisation that helps to evaluate a Single Teacher's Performance over the semesters in a particular subject.</p>
+                <a class="btn btn-primary" href="/discretebarchart_with_date/">View Graph <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'img/stackedbar.png'%}" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Multi Bar Chart</h3>
+                <h4></h4>
+                <p>Get all the performance evaluation in a single graph. You can compare the teacher's performance on the basis of parameters, with the facility to select the parameters you want.</p>
+                <a class="btn btn-primary" href="/multibarchart/">View Graph <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'img/cumulativeline.png'%}" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Line With FocusChart</h3>
+                <h4>Subheading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+                <a class="btn btn-primary" href="/linewithfocuschart/">View Graph<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Four -->
+        <div class="row">
+
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'img/pie.png'%}" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Pie Chart</h3>
+                <h4></h4>
+                <p>Compare the parameters score that contribute to overall rating for a single teacher. You can understand the which parameter or attribute is more dominant or better.</p>
+                <a class="btn btn-primary" href="/piechart/">View Graph <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'img/horizontalbar.png' %}" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Multi Bar Horizontal Chart</h3>
+               
+                <p>Compare the rating records of teachers over the given two years. You can also compare two teachers performances for a given subject, so as to find whose performance is better. </p>
+                <a class="btn btn-primary" href="/multibarhorizontalchart/">View Graph <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        
+        <!-- /.row -->
+
+        <hr>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
